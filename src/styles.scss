@@ -1,3 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 95vh;
+}
+
+.mat-list-item-content {
+  width: 100%;
+
+  & > div {
+    width: 100%;
+  }
+}
+
+.mat-subheader {
+  margin: 0;
+}
+
+.pros_cons_wrapper {
+  min-height: calc(100vh - 150px);
+}
+
+.new_item_input {
+  mat-form-field {
+    width: calc(100% - 50px);
+  }
+}
