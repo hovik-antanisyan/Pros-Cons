@@ -19,6 +19,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './store/effects/user.effects';
 import { UserService } from './services/user.service';
 import { ProsConsEffects } from './store/effects/pros-cons.effects';
+import { RemoveItemDialogComponent } from './components/remove-item-dialog/remove-item-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProsConsEffects } from './store/effects/pros-cons.effects';
     ConsComponent,
     ConListComponent,
     ConItemComponent,
+    RemoveItemDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { ProsConsEffects } from './store/effects/pros-cons.effects';
     ProsConsService,
     UserService
   ],
+  entryComponents: [RemoveItemDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -22,7 +22,6 @@ export class UserEffects {
                           UserActions.userIdLoaded({userId: userInfo.userId}),
                       ];
                     }),
-                    // catchError(error => of(AuthApiActions.loginFailure({ error })))
                 );
               }
           )

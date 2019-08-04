@@ -9,9 +9,9 @@
 
   <div class="new_item_input">
     <mat-form-field>
-      <input matInput placeholder="New Con's"/>
+      <input matInput placeholder="New Con's" [(ngModel)]="conTitle"/>
     </mat-form-field>
-    <button mat-icon-button>
+    <button mat-icon-button (click)="addCon()" [disabled]="!conTitle">
       <mat-icon>add_circle_outline</mat-icon>
     </button>
   </div>

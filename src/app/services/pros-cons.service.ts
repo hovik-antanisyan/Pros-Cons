@@ -17,7 +17,7 @@ export class ProsConsService {
   update(
       userInfo: { groupId: string, userId: string },
       prosCons: { pros: string[], cons: string[] }
-  ) {
+  ): Observable<any> {
     return this.http.put(`${this.apiUrl}proscons/group/${userInfo.groupId}/user/${userInfo.userId}`, {
       pros: prosCons.pros,
       cons: prosCons.cons

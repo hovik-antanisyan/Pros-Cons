@@ -9,9 +9,9 @@
 
   <div class="new_item_input">
     <mat-form-field>
-      <input matInput placeholder="New Pro's"/>
+      <input matInput placeholder="New Pro's" [(ngModel)]="proTitle"/>
     </mat-form-field>
-    <button mat-icon-button>
+    <button mat-icon-button (click)="addPro()" [disabled]="!proTitle">
       <mat-icon>add_circle_outline</mat-icon>
     </button>
   </div>

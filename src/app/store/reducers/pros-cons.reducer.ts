@@ -29,6 +29,20 @@ const prosConsReducer = createReducer(
       consLoading: true,
       consLoaded: false
     })),
+    on(ProsConsActions.addPro, (state, props) => ({
+      ...state,
+      prosLoading: true,
+      prosLoaded: false,
+      consLoading: true,
+      consLoaded: false
+    })),
+    on(ProsConsActions.addCon, (state, props) => ({
+      ...state,
+      prosLoading: true,
+      prosLoaded: false,
+      consLoading: true,
+      consLoaded: false
+    })),
     on(ProsConsActions.prosLoaded, (state, props) => ({
       ...state,
       pros: props.pros,

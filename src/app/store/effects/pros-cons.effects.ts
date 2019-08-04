@@ -67,6 +67,48 @@ export class ProsConsEffects {
       )
   );
 
+  addPro = createEffect(() =>
+      this.actions$.pipe(
+          ofType(ProsConsActions.addPro),
+          withLatestFrom(this.store$),
+          exhaustMap(([action, state]) => {
+            const pros = [...state.prosCons.pros];
+            pros.push(action.title);
+
+            const {cons} = state.prosCons;
+            const {groupId, userId} = state.user;
+
+            return this.prosConsService.update({groupId, userId}, {pros, cons}).pipe(
+                mergeMap(result => ([
+                  ProsConsActions.consLoaded({cons: result.cons}),
+                  ProsConsActions.prosLoaded({pros: result.pros})
+                ]))
+            );
+          })
+      )
+  );
+
+  addCon = createEffect(() =>
+      this.actions$.pipe(
+          ofType(ProsConsActions.addCon),
+          withLatestFrom(this.store$),
+          exhaustMap(([action, state]) => {
+            const cons = [...state.prosCons.cons];
+            cons.push(action.title);
+
+            const {pros} = state.prosCons;
+            const {groupId, userId} = state.user;
+
+            return this.prosConsService.update({groupId, userId}, {pros, cons}).pipe(
+                mergeMap(result => ([
+                  ProsConsActions.consLoaded({cons: result.cons}),
+                  ProsConsActions.prosLoaded({pros: result.pros})
+                ]))
+            );
+          })
+      )
+  );
+
   constructor(private actions$: Actions,
               private store$: Store<AppState>,
               private prosConsService: ProsConsService) {

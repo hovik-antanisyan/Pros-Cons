@@ -5,7 +5,8 @@ export const PROS_CONS_PROS_LOADED = '[PROS_CONS] Pros loaded';
 export const PROS_CONS_CONS_LOADED = '[PROS_CONS] Cons loaded';
 export const PROS_CONS_REMOVE_PRO = '[PROS_CONS] Remove pro';
 export const PROS_CONS_REMOVE_CON = '[PROS_CONS] Remove con';
-export const PROS_CONS_UPDATE = '[PROS_CONS] Update both lists';
+export const PROS_CONS_ADD_PRO = '[PROS_CONS] Add pro';
+export const PROS_CONS_ADD_CON = '[PROS_CONS] Add con';
 
 export const loadList = createAction(PROS_CONS_LOAD_LIST);
 
@@ -26,6 +27,16 @@ export const removePro = createAction(
 
 export const removeCon = createAction(
     PROS_CONS_REMOVE_CON,
+    props<{ title: string }>()
+);
+
+export const addPro = createAction(
+    PROS_CONS_ADD_PRO,
+    props<{ title: string }>()
+);
+
+export const addCon = createAction(
+    PROS_CONS_ADD_CON,
     props<{ title: string }>()
 );
 
