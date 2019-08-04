@@ -1,8 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
 
 import * as UserActions from '../actions/user.actions';
-import { ActionReducerMap } from '@ngrx/store/src/models';
-import { InjectionToken } from '@angular/core';
 
 export interface UserState {
   groupId: string;

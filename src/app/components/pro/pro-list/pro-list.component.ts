@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProsConsService } from '../../../services/pros-cons.service';
+import * as fromApp from '../../../store/reducers/app.reducers';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-pro-list',
@@ -7,10 +9,11 @@ import { ProsConsService } from '../../../services/pros-cons.service';
   styleUrls: ['./pro-list.component.scss']
 })
 export class ProListComponent implements OnInit {
-  pros: string[] = [];
-  constructor(private prosConsService: ProsConsService) { }
+  pros$: Observable<any>;
+  constructor(private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
+    this.pros$ = this.store.select(fromApp.selectPros);
   }
 
 }

@@ -24,10 +24,22 @@ body {
 
 .pros_cons_wrapper {
   min-height: calc(100vh - 150px);
+  position: relative;
 }
 
 .new_item_input {
   mat-form-field {
     width: calc(100% - 50px);
   }
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.mat-subheader {
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  align-items: center;
 }

@@ -1,1 +1,4 @@
-<p>con-list works!</p>
+<mat-spinner *ngIf="(cons$ | async).consLoading" [diameter]="60"></mat-spinner>
+<mat-list *ngIf="(cons$ | async).consLoaded">
+  <app-con-item *ngFor="let con of (cons$ | async).cons" [con]="con"></app-con-item>
+</mat-list>

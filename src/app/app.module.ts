@@ -14,11 +14,11 @@ import { ConsComponent } from './components/cons/cons.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProsConsService } from './services/pros-cons.service';
 import { StoreModule } from '@ngrx/store';
-import * as fromUser from './store/reducers/user.reducer';
 import { ROOT_REDUCERS } from './store/reducers/app.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './store/effects/user.effects';
 import { UserService } from './services/user.service';
+import { ProsConsEffects } from './store/effects/pros-cons.effects';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { UserService } from './services/user.service';
     SharedModule,
     HttpClientModule,
     StoreModule.forRoot(ROOT_REDUCERS),
-    EffectsModule.forRoot([UserEffects])
+    EffectsModule.forRoot([UserEffects, ProsConsEffects])
   ],
   providers: [
     ProsConsService,

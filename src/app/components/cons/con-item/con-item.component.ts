@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-con-item',
@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./con-item.component.scss']
 })
 export class ConItemComponent implements OnInit {
+  @Input('con') con;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

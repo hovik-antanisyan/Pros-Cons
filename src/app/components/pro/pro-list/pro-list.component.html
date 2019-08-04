@@ -1,3 +1,4 @@
-<mat-list>
-  <app-pro-item *ngFor="let pro of pros" [pro]="pro"></app-pro-item>
+<mat-spinner *ngIf="(pros$ | async).prosLoading" [diameter]="60"></mat-spinner>
+<mat-list *ngIf="(pros$ | async).prosLoaded">
+  <app-pro-item *ngFor="let pro of (pros$ | async).pros" [pro]="pro"></app-pro-item>
 </mat-list>

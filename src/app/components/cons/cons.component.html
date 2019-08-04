@@ -1,1 +1,18 @@
-<p>cons works!</p>
+<mat-card-title>Con's</mat-card-title>
+
+<div
+    class="pros_cons_wrapper"
+    fxLayout="column"
+    fxLayoutAlign="space-between"
+>
+  <app-con-list></app-con-list>
+
+  <div class="new_item_input">
+    <mat-form-field>
+      <input matInput placeholder="New Con's"/>
+    </mat-form-field>
+    <button mat-icon-button>
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+  </div>
+</div>

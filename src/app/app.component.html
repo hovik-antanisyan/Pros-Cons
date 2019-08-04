@@ -6,10 +6,14 @@
     fxLayoutAlign="center center"
     fxLayoutGap="30px"
 >
-  <div fxFlex.gt-xs="50%" fxFlex.xs="100%">
-    <app-pro></app-pro>
-  </div>
-  <div fxFlex.gt-xs="50%" fxFlex.xs="100%">
-    <app-cons></app-cons>
-  </div>
+  <mat-card fxFlex.gt-xs="50%" fxFlex.xs="1 0 100%" fxFlexFill>
+    <mat-card-content>
+      <app-pro></app-pro>
+    </mat-card-content>
+  </mat-card>
+  <mat-card fxFlex.gt-xs="50%" fxFlex.xs="1 0 100%" fxFlexFill>
+    <mat-card-content>
+      <app-cons></app-cons>
+    </mat-card-content>
+  </mat-card>
 </section>
