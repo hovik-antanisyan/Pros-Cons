@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../store/reducers/app.reducers';
+import * as ProsConsActions from '../../../store/actions/pros-cons.actions';
 
 @Component({
   selector: 'app-pro-item',
@@ -8,9 +11,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProItemComponent implements OnInit {
   @Input('pro') pro;
 
-  constructor() { }
+  constructor(private store: Store<AppState>) {
+  }
 
   ngOnInit() {
+  }
+
+  onRemovePro(title) {
+    this.store.dispatch(ProsConsActions.removePro({title}));
   }
 
 }

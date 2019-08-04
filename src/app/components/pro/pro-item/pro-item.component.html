@@ -1,7 +1,7 @@
 <mat-list-item>
   <div fxLayout="raw" fxLayoutAlign="space-between">
     <p>{{pro}}</p>
-    <button mat-icon-button color="warn">
+    <button mat-icon-button color="warn" (click)="onRemovePro(pro)">
       <mat-icon>remove_circle_outline</mat-icon>
     </button>
   </div>

@@ -16,4 +16,5 @@ export class ConListComponent implements OnInit {
   ngOnInit() {
     this.cons$ = this.store.select(fromApp.selectCons);
   }
+
 }

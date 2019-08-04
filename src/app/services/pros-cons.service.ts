@@ -7,9 +7,20 @@ import { environment } from '../../environments/environment';
 export class ProsConsService {
   apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
-  getProsAndCons(userInfo: {groupId: string, userId: string}): Observable<any> {
+  getProsAndCons(userInfo: { groupId: string, userId: string }): Observable<any> {
     return this.http.get(`${this.apiUrl}proscons/group/${userInfo.groupId}/user/${userInfo.userId}`);
+  }
+
+  update(
+      userInfo: { groupId: string, userId: string },
+      prosCons: { pros: string[], cons: string[] }
+  ) {
+    return this.http.put(`${this.apiUrl}proscons/group/${userInfo.groupId}/user/${userInfo.userId}`, {
+      pros: prosCons.pros,
+      cons: prosCons.cons
+    });
   }
 }
